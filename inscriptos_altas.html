@@ -18,7 +18,7 @@
         <div class="logo-centrado">
             <img src="Imagenes/horoscopo1.jpg" alt="Contacto" class="contact-image">
         </div>
-        <h1>Alta de inscripto</h1>
+        <h1>Alta de visitante</h1>
 
         <!--enctype="multipart/form-data" es necesario para enviar archivos al back. Se usa este para enviar datos y archivos -->
         <form id="formulario" enctype="multipart/form-data">
@@ -34,7 +34,7 @@
             <label for="mensaje">Mensaje:</label>
             <textarea id="mensaje" name="mensaje"></textarea><br>
 
-            <button type="submit">Agregar inscripto al registro</button>
+            <button type="submit">Agregar al registro.</button>
             <a href="contacto_index.html">Menu principal</a>
         </form>
     </div>
@@ -64,15 +64,15 @@
                         } else {    // Sino...
                         // Si hubo un error, lanzar explícitamente una excepción
                         // para ser "catcheada" más adelante
-                            throw new Error('Error al agregar el inscripto.');
+                            throw new Error('Error al agregar el visitante.');
                         }
                 })
                 .then(function (data) {     //Respuesta OK, muestra una alerta informando que el inscripto se agregó correctamente y limpia los campos del formulario para que puedan ser utilizados para un nuevo inscripto.
-                    alert('inscripto agregado correctamente.');
+                    alert('Visitante agregado correctamente.');
                 })
 
                 .catch(function (error) {   // En caso de error, mostramos una alerta con un mensaje de error.
-                    alert('Error al agregar el inscripto.');
+                    alert('Error al agregar el visitante.');
                 })
 
                 .finally(function () {      // Se ejecuta siempre dsp cuando la promesa fue ejecutada y cuando toda la cadena de promesas fue ejecutada con errores o sin errores. Limpiar el formulario en ambos casos (éxito o error)

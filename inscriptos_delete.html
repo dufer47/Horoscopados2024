@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eliminar inscriptos</title>
+    <title>Eliminar visitantes</title>
     <link rel="icon" type="image/x-icon" href="Imagenes/astrologia.png">
     <link rel="stylesheet" href="./Styles/inscriptos_delete.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,7 +18,7 @@
         <div class="logo-centrado">
             <img src="Imagenes/horoscopo1.jpg" alt="Contacto" class="contact-image">
         </div>
-        <h1>Eliminar inscripto del registro</h1>
+        <h1>Eliminar visitante del registro.</h1>
 
         <table id="inscriptos-table"> <!-- Se crea una tabla para mostrar los inscriptos. -->
             <thead> <!--Encabezado de la tabla con columnas para código, descripción, email, telefono y accion.-->
@@ -68,19 +68,19 @@
                 // Captura y maneja errores, mostrando una alerta en caso de error al obtener los inscriptos.
                 .catch(error => {
                     console.log('Error:', error);
-                    alert('Error al obtener los inscriptos.');
+                    alert('Error al obtener los visitantes.');
                 });
         }
         // Se utiliza para eliminar un inscripto.
         function eliminarInscripto(codigo) {
             // Se muestra un diálogo de confirmación. Si el usuario confirma, se realiza una solicitud DELETE al servidor a través de fetch(URL + 'inscriptos/${codigo}', {method: 'DELETE' }).
-            if (confirm('¿Estás seguro de que quieres eliminar este inscripto?')) {
+            if (confirm('¿Estás seguro de que quieres eliminar este visitante?')) {
                 fetch(URL + `inscriptos/${codigo}`, { method: 'DELETE' })
                     .then(response => {
                         if (response.ok) {
                             // Si es exitosa (response.ok), elimina el inscripto y da mensaje de ok.
                             obtenerInscriptos(); // Vuelve a obtener la lista de inscriptos para actualizar la tabla.
-                            alert('inscripto eliminado correctamente.');
+                            alert('Visitante eliminado correctamente.');
                         }
                     })
                     // En caso de error, mostramos una alerta con un mensaje de error.
